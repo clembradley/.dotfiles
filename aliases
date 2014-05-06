@@ -1,0 +1,38 @@
+# repos
+alias fantassist='echo -e "\033];Fantassist\007"; cd ~/projects/fantassist2;'
+alias hindsight='echo -e "\033];Hindsight\007"; cd ~/work/hindsight;'
+
+# switch profiles
+alias p_default='echo -e "\033]50;SetProfile=Default\a"'
+alias p_danger_zone='echo -e "\033]50;SetProfile=DangerZone\a";'
+
+# git aliases
+alias co='git checkout'
+alias gbcbuf='git symbolic-ref head --short | pbcopy' # copy current branch name to copy buffer
+alias gda='git diff -w HEAD'
+alias gitready="git pull --rebase && git prune && git remote prune origin"
+alias gitwip="git add -A && git ci -m 'clem: WIP'"
+alias gpp='git pull --rebase && git push'
+
+# misc aliases
+alias be='bundle exec'
+alias brake='bundle exec rake'
+alias 'bundle-proxy'='http_proxy=http://localhost:3132 bundle'
+alias cppwd='pwd | pbcopy'
+alias la='ls -laGF'
+alias lake='LOCAL=true bundle exec rake'
+alias lrspec='LOCAL=true rspec'
+alias sbash='source ~/.bashrc'
+alias shost='sudo scutil --set HostName' # change the name of this host/machine
+
+#rails aliases
+alias c='script/console'
+alias p='script/pry'
+alias speccon='script/rspec_console'
+alias ss='script/server'
+
+
+alias bashrc='mvim ~/.bashrc'
+alias vimrc='mvim ~/.vimrc'
+
+source ~/.aliases.groupon

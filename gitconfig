@@ -1,0 +1,50 @@
+[alias]
+	pp = pull --rebase && git push
+	co = checkout
+	wc = whatchanged
+	wc1 = whatchanged -1
+	wc3 = whatchanged -3
+	st = status
+	ci = commit
+	br = branch
+	l = log --no-merges
+	ll = log origin/master..HEAD
+	l3 = log -3 --no-merges
+	d = diff
+	log-pretty = log --pretty=oneline
+	drb = "!bash -c \"[[ $# = 1 ]] && git br -D $1 && git push origin :$1 || echo Missing argument: remote branch name\""
+	latest-commit = rev-list -n 1 HEAD
+	commit-push = !bash -c \"git commit $@ && git push\"
+	create-branch = "!bash -c \"[[ $# = 1 ]] || echo Missing argument: new branch name && git push origin HEAD:$1 && git checkout -b $1 origin/$1\""
+	dupes = !git ls-tree -r HEAD | cut -c 13- | sort | uniq -D -w 40
+	pub = "!f() { git push origin HEAD:`git symbolic-ref --short -q HEAD` -f -u; }; f" # push the current branch to origin
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	update-timestamp = !bash -c \"git commit --amend --date '`date`'\"
+	diff-master = diff origin/master..HEAD
+[color]
+	ui = true
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = green
+	changed = yellow
+	untracked = cyan
+[color "diff"]
+	whitespace = red reverse
+[core]
+	editor = mvim -f
+	excludesfile = /Users/clement/.gitignore_global
+[user]
+	name = Clem Bradley
+	email = clem@groupon.com
+[credential]
+	helper = osxkeychain
+[push]
+	default = simple
