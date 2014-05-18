@@ -4,7 +4,7 @@ This repo containts various config files, plugins, and instructions on how to in
 # Installing Vim environment on another machine
 
 	cd ~
-	git clone https://github.com/clembradley/.vim-environment.git ~/.vim
+	git clone https://github.com/clembradley/dotfiles.git ~/.vim
 	ln -s ~/.vim/vimrc ~/.vimrc
 	ln -s ~/.vim/gvimrc ~/.gvimrc
 	ln -s ~/.vim/gitconfig ~/.gitconfig
